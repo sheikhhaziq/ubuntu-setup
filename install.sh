@@ -4,7 +4,20 @@ echo "🌿 Starting Ubuntu setup..."
 
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y git curl flatpak gnome-shell-extensions dconf-cli
-sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+
+# 🧩 Install chezmoi safely
+if command -v chezmoi >/dev/null 2>&1; then
+  echo "✅ chezmoi already installed."
+elif snap list | grep -q chezmoi; then
+  echo "✅ chezmoi already installed via Snap."
+else
+  echo "📥 Installing chezmoi..."
+  if command -v snap >/dev/null 2>&1; then
+    sudo snap install chezmoi
+  else
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+  fi
+fi
 
 chezmoi init https://github.com/sheikhhaziq/ubuntu-setup.git
 chezmoi apply

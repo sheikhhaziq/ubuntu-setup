@@ -3,7 +3,8 @@ set -e
 echo "🌿 Starting Ubuntu setup..."
 
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y git curl chezmoi flatpak gnome-shell-extensions dconf-cli
+sudo apt install -y git curl flatpak gnome-shell-extensions dconf-cli
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
 
 chezmoi init https://github.com/sheikhhaziq/ubuntu-setup.git
 chezmoi apply

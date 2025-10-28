@@ -1,5 +1,5 @@
 [Unit]
-Description=Run Ubuntu setup auto-sync every 30 minutes
+Description=Run ubuntu-setup auto-sync every 30 minutes
 
 [Timer]
 OnBootSec=5min

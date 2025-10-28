@@ -1,14 +1,11 @@
 [Unit]
-Description=Auto commit and push Ubuntu setup + update package lists
+Description=Auto commit and push dotfiles every 30 minutes
 
 [Service]
 Type=oneshot
 ExecStart=/bin/bash -c '
-set -e
-cd ~/.local/share/chezmoi || exit 0
-# update package and flatpak lists
-apt-mark showmanual | sort > packages.txt
-flatpak list --app --columns=application | sort > flatpaks.txt
+cd ~/ubuntu-setup || exit 0
+bash dump-packages.sh
 git add -A
 git commit -m "auto-sync $(date)" && git push || true
 '

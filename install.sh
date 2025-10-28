@@ -13,7 +13,7 @@ elif snap list | grep -q chezmoi; then
 else
   echo "📥 Installing chezmoi..."
   if command -v snap >/dev/null 2>&1; then
-    sudo snap install chezmoi
+    sudo snap install chezmoi --classic
   else
     sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
   fi

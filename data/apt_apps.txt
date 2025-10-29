@@ -1,0 +1,7 @@
+# Development Tools
+git
+# Command-Line Utilities
+curl
+wget
+# Desktop & System
+gnome-tweaks

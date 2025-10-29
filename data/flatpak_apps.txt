@@ -1,0 +1,21 @@
+# GNOME Core Apps
+org.gnome.Calculator
+org.gnome.Calendar
+org.gnome.TextEditor
+org.gnome.Shotwell
+org.gnome.Snapshot
+org.gnome.clocks
+
+# System Utilities
+com.mattjakeman.ExtensionManager
+io.missioncenter.MissionCenter
+io.github.nozwock.Packet
+
+# Productivity
+org.libreoffice.LibreOffice
+
+# Media
+io.github.celluloid_player.Celluloid
+
+# Other Apps
+io.github.kolunmi.Bazaar

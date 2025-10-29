@@ -1,0 +1,18 @@
+# Productivity & Office
+thunderbird
+libreoffice*
+# GNOME Core Apps
+gnome-calculator
+gnome-calendar
+gnome-system-monitor
+gnome-text-editor
+shotwell
+gnome-snapshot
+gnome-clocks
+# Media
+rhythmbox
+totem
+# Utilities
+transmission-gtk
+remmina
+usb-creator-gtk

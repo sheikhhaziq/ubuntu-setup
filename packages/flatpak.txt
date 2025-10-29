@@ -1,8 +1,0 @@
-com.brave.Browser
-com.freerdp.FreeRDP
-com.google.Chrome
-com.mattjakeman.ExtensionManager
-io.github.kolunmi.Bazaar
-io.github.nozwock.Packet
-io.github.zaedus.spider
-io.missioncenter.MissionCenter

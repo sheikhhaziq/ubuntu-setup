@@ -10,8 +10,14 @@ This method uses the `ubuntu_setup.sh` bootstrap script in this repository to au
 
 On a fresh Ubuntu system, run this single command. This fetches the script directly from this repository and runs it.
 
+> If curl is not installed, install it by running
+>
+> `sudo apt install curl`
+> 
+> then proceed
+
 ```sh
-curl -sSL "[https://raw.githubusercontent.com/sheikhhaziq/ubuntu-setup/main/ubuntu_setup.sh](https://raw.githubusercontent.com/sheikhhaziq/ubuntu-setup/main/ubuntu_setup.sh)" | bash
+curl -sSL "https://raw.githubusercontent.com/sheikhhaziq/ubuntu-setup/main/ubuntu_setup.sh" | bash
 ```
 
 This single command will:

@@ -44,7 +44,7 @@ sudo apt install git -y
 ### 2. Clone This Repository
 
 ```sh
-git clone [https://github.com/sheikhhaziq/ubuntu-setup.git](https://github.com/sheikhhaziq/ubuntu-setup.git)
+git clone https://github.com/sheikhhaziq/ubuntu-setup.git
 cd ubuntu-setup
 ```
 

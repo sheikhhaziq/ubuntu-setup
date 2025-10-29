@@ -1,74 +1,100 @@
-# 🌿 My Ubuntu Setup
+# 🧰 Ubuntu Setup Automation
 
-A personal collection of scripts to automate the setup and configuration of a fresh Ubuntu desktop.
+This repository provides a **complete automated setup script** for Ubuntu (GNOME) — ideal for quickly provisioning new systems with your preferred apps, Flatpaks, and system configurations.
 
-This project removes unwanted `apt` and `snap` packages, installs essential tools, and sets up a customized list of `flatpak` applications.
+---
 
-## 🚀 Quick Install (Recommended)
+## 🚀 Features
 
-This method uses the `ubuntu_setup.sh` bootstrap script in this repository to automate the entire process.
+- 🧩 **Automatic apt package installation** from `apt-packages.txt`
+- 📦 **Flatpak setup & Flathub repo configuration**
+- 🧼 **Removal of unwanted apt & snap apps**
+- 💡 **Flatpak app installation** from `flatpak-apps.txt`
+- ⚙️ **Single sudo prompt** (no repeated password requests)
+- 🪟 **Interactive, intuitive shell UI**
 
-On a fresh Ubuntu system, run this single command. This fetches the script directly from this repository and runs it.
+---
 
-> If curl is not installed, install it by running
->
-> `sudo apt install curl`
-> 
-> then proceed
+## 🗂️ Project Structure
 
-```sh
-curl -sSL "https://raw.githubusercontent.com/sheikhhaziq/ubuntu-setup/main/ubuntu_setup.sh" | bash
+```
+ubuntu-setup/
+├──data/
+├  ├── apt_apps.txt             # List of apt packages to install
+├  ├── flatpak-apps.txt         # List of Flatpak apps to install
+├  ├── remove_apt_apps.txt      # List of apt apps to remove
+├  ├── remove_snap_apps.txt     # List of snap apps to remove
+├──scripts/
+├  ├── remove_snap_apps.sh      # Removes unwanted Snap packages
+├  ├── remove_apt_apps.sh       # Removes unwanted apt packages  
+├  ├── install_apt_apps.sh      # Installs apt packages listed in apt-packages.txt
+├  ├── flatpak_setup.sh         # Sets up Flatpak and Flathub
+├  ├── install_flatpak_aps.sh   # Installs Flatpak apps from flatpak-apps.txt
+├── 
+├── setup.sh                    # Main orchestrator script
+├── ubuntu_setup.sh             # Quick installation script        
+└── README.md                   # Documentation
 ```
 
-This single command will:
+---
 
-- Ask for your password.
+## ⚙️ Usage
+### 🏃 Quick Install (recommended)
 
-- Install git.
-
-- Clone this repository.
-
-- Run the main setup.sh script.
-
-## ⚙️ Manual Installation
-
-If you prefer to clone the repository and inspect the scripts first, you can follow these steps.
-
-### 1. Install Git
+Run this single command — it will clone and execute everything automatically:
 
 ```sh
-sudo apt update
-sudo apt install git -y
+bash <(curl -fsSL https://raw.githubusercontent.com/sheikhhaziq/ubuntu-setup/main/ubuntu_setup.sh)
 ```
 
-### 2. Clone This Repository
 
-```sh
+You’ll be prompted once for your password.
+After that, the script runs non-interactively.
+
+This will sequentially execute:
+1. apt app cleanup
+2. snap cleanup
+3. apt package installation
+4. Flatpak setup
+5. Flatpak app installation
+
+---
+
+## 🧱 Example Workflow
+
+```bash
+# Clone repository
 git clone https://github.com/sheikhhaziq/ubuntu-setup.git
 cd ubuntu-setup
+
+# Make scripts executable
+chmod +x *.sh
+
+# Run main script
+sudo ./setup.sh
 ```
 
-### 3. Make Scripts Executable
+---
 
-```sh
-chmod +x setup.sh scripts/*.sh
-```
+## 🧩 Customization
 
-### 4. Run the Setup
-```sh
-./setup.sh
-```
+- Modify `data/apt_apps.txt` or `data/flatpak_apps.txt` to fit your preferences.  
+- Add or remove unwanted applications in `data/remove_apt_apps.sh` and `data/remove_snap_apps.sh`.  
+- You can also integrate your own scripts inside `setup.sh` to extend functionality.
 
-## ✏️ How to Customize
+---
 
-This setup is fully modular. To change which applications are installed or removed, you only need to edit the .txt files in the data/ directory.
+## 🧑‍💻 Author
 
-- `data/apt_apps.txt`: List of `apt` packages to install.
+**Sheikh Haziq**  
+🚀 [GitHub](https://github.com/sheikhhaziq)
 
-- `data/flatpak_apps.txt`: List of `flatpak` app IDs to install.
+---
 
-- `data/remove_apt.txt`: List of `apt` packages to remove.
+## 📜 License
 
-- `data/remove_snap.txt`: List of `snap` packages to remove.
+This project is licensed under the [MIT License](LICENSE).
 
-You can use `#` for comments in these files to keep them organized.
+---
+
+> 💡 Designed for Ubuntu GNOME users who want a one-command setup experience.

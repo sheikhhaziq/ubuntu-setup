@@ -100,4 +100,7 @@ run_step "Flatpak Installation" "install_flatpak.sh" "Installing Flatpak apps fr
 echo -e "\n${GREEN}====================================================================="
 echo -e " 🎉 ALL TASKS COMPLETED SUCCESSFULLY! 🎉"
 echo -e "=====================================================================${RESET}"
+echo -e "\n${YELLOW}====================================================================="
+echo -e " You may need to reboot ofr changes to take effect"
+echo -e "=====================================================================${RESET}"
 
